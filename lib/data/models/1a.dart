@@ -1,6 +1,6 @@
 import 'package:laplace_chart/data/models/i_data.dart';
 
-class OneA extends IData {
+class OneA extends IChartData {
   double o;
   double h;
   double l;

@@ -1,6 +1,6 @@
 import 'i_data.dart';
 
-class OneH extends IData {
+class OneH extends IChartData {
   double o;
   double h;
   double l;

@@ -21,7 +21,7 @@ class RouteService implements IRouteService {
   }
 
   @override
-  Future<void> pop({Object data}) {
+  Future<void> pop({Object data}) async {
     navigatorKey.currentState.pop([data]);
   }
 }

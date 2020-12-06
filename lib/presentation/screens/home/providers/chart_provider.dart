@@ -89,7 +89,7 @@ class ChartProvider extends ChangeNotifier {
     return null;
   }
 
-  List<DataModel> _data(List<IData> data) {
+  List<DataModel> _data(List<IChartData> data) {
     return data.map((d) => DataModel(d.d, d.c)).toList();
   }
 }
