@@ -8,10 +8,10 @@ import 'package:laplace_chart/data/models/3a.dart';
 import 'package:laplace_chart/data/models/5y.dart';
 import 'package:laplace_chart/data/models/demo_model.dart';
 import 'package:laplace_chart/data/models/i_data.dart';
+import 'package:laplace_chart/di/get_it.dart';
 import 'package:laplace_chart/domain/entities/app_error.dart';
 import 'package:laplace_chart/domain/entities/no_params.dart';
 import 'package:laplace_chart/domain/usecases/get_chart_demo.dart';
-import 'package:laplace_chart/di/get_it.dart' as getIt;
 
 class ChartProvider extends ChangeNotifier {
   int _selectedIndex;
@@ -61,7 +61,7 @@ class ChartProvider extends ChangeNotifier {
   }
 
   void getModel() async {
-    GetChartDemo getChartDemo = getIt.getItInstance<GetChartDemo>();
+    GetChartDemo getChartDemo = getItInstance<GetChartDemo>();
     final Either<AppError, DemoModel> eitherResponse = await getChartDemo(NoParams());
     eitherResponse.fold((l) {
       print("error");

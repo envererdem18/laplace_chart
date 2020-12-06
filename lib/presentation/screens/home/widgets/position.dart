@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:laplace_chart/core/constants/size_constants.dart';
+import 'package:laplace_chart/core/constants/translation_constants.dart';
 import 'package:laplace_chart/core/extensions/size_extensions.dart';
+import 'package:laplace_chart/core/extensions/string_extemsions.dart';
 
 class Position extends StatelessWidget {
   @override
@@ -10,7 +12,7 @@ class Position extends StatelessWidget {
       child: Container(
         alignment: Alignment.topLeft,
         child: Text(
-          "Pozisyonum",
+          "${TranslationConstants.myPosition.t(context)}",
           style: TextStyle(fontSize: Sizes.dimen_20.sp, fontWeight: FontWeight.bold),
         ),
       ),

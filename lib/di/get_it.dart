@@ -5,6 +5,7 @@ import 'package:laplace_chart/data/data_sources/remote_data_source.dart';
 import 'package:laplace_chart/data/repositories/demo_repository_impl.dart';
 import 'package:laplace_chart/domain/repositories/demo_repository.dart';
 import 'package:laplace_chart/domain/usecases/get_chart_demo.dart';
+import 'package:laplace_chart/presentation/bolcs/language_bloc/language_bloc.dart';
 
 final getItInstance = GetIt.I;
 
@@ -16,4 +17,5 @@ Future init() async {
   getItInstance.registerLazySingleton<RemoteDataSource>(() => DemoRemoteDataSourceImpl(getItInstance()));
   getItInstance.registerLazySingleton<DemoRepository>(() => DemoRepositoryImpl(getItInstance()));
   getItInstance.registerLazySingleton<GetChartDemo>(() => GetChartDemo(getItInstance()));
+  getItInstance.registerSingleton<LanguageBloc>(LanguageBloc());
 }

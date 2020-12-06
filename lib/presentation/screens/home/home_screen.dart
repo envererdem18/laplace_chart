@@ -16,7 +16,6 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: ColorPalette.white,
         elevation: 0,
-        title: Text("Laplace Chart"),
         leading: IconButton(
             icon: Icon(
               Icons.arrow_back_ios,

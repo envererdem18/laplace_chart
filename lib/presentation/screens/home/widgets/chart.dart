@@ -2,7 +2,9 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:laplace_chart/core/color_palette/color_palette.dart';
 import 'package:laplace_chart/core/constants/size_constants.dart';
+import 'package:laplace_chart/core/constants/translation_constants.dart';
 import 'package:laplace_chart/core/extensions/size_extensions.dart';
+import 'package:laplace_chart/core/extensions/string_extemsions.dart';
 import 'package:laplace_chart/presentation/screens/home/providers/chart_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -24,13 +26,13 @@ class Chart extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Şu an"),
+                Text("${TranslationConstants.now.t(context)}"),
                 provider.demoModel == null
                     ? Center(
                         child: CircularProgressIndicator(),
                       )
                     : _buildChart(),
-                _buildMenu(),
+                _buildMenu(context),
               ],
             ),
           ),
@@ -74,23 +76,23 @@ class Chart extends StatelessWidget {
     });
   }
 
-  Widget _buildMenu() {
+  Widget _buildMenu(BuildContext context) {
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          _menuItem(title: "1G", index: 0),
+          _menuItem(title: "1${TranslationConstants.day.t(context)[0]}", index: 0),
           _divider(),
-          _menuItem(title: "1H", index: 1),
+          _menuItem(title: "1${TranslationConstants.week.t(context)[0]}", index: 1),
           _divider(),
-          _menuItem(title: "1A", index: 2),
+          _menuItem(title: "1${TranslationConstants.month.t(context)[0]}", index: 2),
           _divider(),
-          _menuItem(title: "3A", index: 3),
+          _menuItem(title: "3${TranslationConstants.month.t(context)[0]}", index: 3),
           _divider(),
-          _menuItem(title: "1Y", index: 4),
+          _menuItem(title: "1${TranslationConstants.year.t(context)[0]}", index: 4),
           _divider(),
-          _menuItem(title: "5Y", index: 5),
+          _menuItem(title: "5${TranslationConstants.year.t(context)[0]}", index: 5),
         ],
       ),
     );

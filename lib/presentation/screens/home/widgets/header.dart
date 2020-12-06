@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:laplace_chart/core/color_palette/color_palette.dart';
 import 'package:laplace_chart/core/constants/size_constants.dart';
+import 'package:laplace_chart/core/constants/translation_constants.dart';
 import 'package:laplace_chart/core/extensions/size_extensions.dart';
+import 'package:laplace_chart/core/extensions/string_extemsions.dart';
 import 'package:laplace_chart/core/utils/screen_utils/screen_util.dart';
 import 'package:laplace_chart/presentation/core/styles/text_styles.dart';
 
@@ -25,11 +27,11 @@ class Header extends StatelessWidget {
                 style: TextStyles.finfreeText.copyWith(color: ColorPalette.lima, fontWeight: FontWeight.normal),
               ),
               TextSpan(
-                text: "%1.91 Artış\n",
+                text: "%1.91 ${TranslationConstants.increase.t(context)}\n",
                 style: TextStyles.finfreeText.copyWith(color: ColorPalette.lima, fontSize: ScreenUtil().setSp(Sizes.dimen_12)),
               ),
               TextSpan(
-                text: "%54 Yıllık Değişim\n",
+                text: "%54 ${TranslationConstants.annualChange.t(context)}\n",
                 style: TextStyles.finfreeText.copyWith(color: ColorPalette.verdun_green, fontSize: ScreenUtil().setSp(Sizes.dimen_12)),
               )
             ]),
@@ -39,12 +41,16 @@ class Header extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(color: ColorPalette.lima, borderRadius: BorderRadius.circular(Sizes.dimen_10.sp)),
-                child: Padding(padding: EdgeInsets.all(Sizes.dimen_10), child: Text("AL", style: TextStyle(color: Colors.white))),
+                child: Padding(
+                    padding: EdgeInsets.all(Sizes.dimen_10),
+                    child: Text("${TranslationConstants.buy.t(context)}", style: TextStyle(color: Colors.white))),
               ),
               Container(
                 margin: EdgeInsets.only(left: Sizes.dimen_32.w),
                 decoration: BoxDecoration(color: ColorPalette.verdun_green, borderRadius: BorderRadius.circular(Sizes.dimen_10.sp)),
-                child: Padding(padding: EdgeInsets.all(Sizes.dimen_10), child: Text("SAT", style: TextStyle(color: Colors.white))),
+                child: Padding(
+                    padding: EdgeInsets.all(Sizes.dimen_10),
+                    child: Text("${TranslationConstants.sell.t(context)}", style: TextStyle(color: Colors.white))),
               ),
             ],
           ),
