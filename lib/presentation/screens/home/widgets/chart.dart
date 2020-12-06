@@ -113,8 +113,8 @@ class Chart extends StatelessWidget {
             ),
             padding: EdgeInsets.all(Sizes.dimen_10.w),
             margin: index == provider.selectedIndex
-                ? EdgeInsets.symmetric(horizontal: Sizes.dimen_12.w)
-                : EdgeInsets.symmetric(horizontal: Sizes.dimen_6.w),
+                ? EdgeInsets.symmetric(horizontal: Sizes.dimen_8.w)
+                : EdgeInsets.symmetric(horizontal: Sizes.dimen_2.w),
             child: Text(title, style: TextStyle(color: index == provider.selectedIndex ? Colors.white : Colors.black)),
           ),
         );
